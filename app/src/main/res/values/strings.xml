@@ -12,4 +12,5 @@
 Nos ayuda a seguir mejorando cada día.</string>
     <string name="thanks_icon_desc">Icono de agradecimiento</string>
     <string name="title_activity_thanks">ThanksActivity</string>
+    <string name="title_activity_excel_generator">ExcelGenerator</string>
 </resources>

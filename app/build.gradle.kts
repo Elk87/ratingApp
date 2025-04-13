@@ -41,9 +41,10 @@ android {
 
 dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("org.apache.poi:poi:5.2.2")
-    implementation("org.apache.poi:poi-ooxml:5.2.2")
-    implementation("org.apache.commons:commons-collections4:4.4")
+    implementation(libs.poi)
+    implementation(libs.poi.ooxml)
+    implementation(libs.xmlbeans)
+    implementation(libs.commons.collections4)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

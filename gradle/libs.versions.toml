@@ -9,6 +9,7 @@ lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.10.1"
 composeBom = "2024.09.00"
 appcompat = "1.7.0"
+poiOoxml = "5.2.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -26,6 +27,12 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+poi-ooxml = { module = "org.apache.poi:poi-ooxml", version.ref = "poiOoxml" }
+poi = { group = "org.apache.poi", name = "poi", version = "5.2.2" }
+poiooxmllite = { group = "org.apache.poi", name = "poi-ooxml-lite", version = "5.2.2" }
+
+xmlbeans = { group = "org.apache.xmlbeans", name = "xmlbeans", version = "5.1.1" }
+commons-collections4 = { group = "org.apache.commons", name = "commons-collections4", version = "4.4" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

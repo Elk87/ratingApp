@@ -13,12 +13,6 @@ class ThanksActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_thanks)
 
-        // Opción: animar la aparición del mensaje (fade in)
-        // findViewById<TextView>(R.id.tvThanksMessage).apply {
-        //    alpha = 0f
-        //    animate().alpha(1f).setDuration(500).start()
-        // }
-
         // Cierra esta activity después del delay
         Handler(Looper.getMainLooper()).postDelayed({
             finish() // Regresa a MainActivity (que se mantiene en back stack)
