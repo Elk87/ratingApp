@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:keepScreenOn="true"
+    android:padding="16dp">
+
+    <!-- Pregunta o título -->
+
+    <!-- Contenedor para las caritas -->
+
+    <TextView
+        android:id="@+id/tvQuestion"
+        android:gravity="center_horizontal"
+        android:layout_width="551dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="96dp"
+        android:fontFamily="@font/lato_regular"
+        android:text="@string/question_experience"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/faceContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvQuestion"
+        app:layout_constraintVertical_bias="0.228">
+
+        <!-- Carita 1: Insatisfecho -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_margin="24dp">
+
+            <ImageView
+                android:id="@+id/face1"
+                android:layout_width="337dp"
+                android:layout_height="216dp"
+                android:clickable="true"
+                android:contentDescription="@string/face_unsatisfied_desc"
+                android:focusable="true"
+                android:src="@drawable/face1" />
+
+            <TextView
+                android:fontFamily="@font/lato_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mala"
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- Carita 2: Neutral -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_margin="24dp">
+
+            <ImageView
+                android:id="@+id/face2"
+                android:layout_width="337dp"
+                android:layout_height="216dp"
+                android:clickable="true"
+                android:contentDescription="@string/face_neutral_desc"
+                android:focusable="true"
+                android:src="@drawable/face2" />
+
+            <TextView
+                android:fontFamily="@font/lato_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Normal"
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- Carita 3: Satisfecho -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_margin="24dp">
+
+            <ImageView
+                android:id="@+id/face3"
+                android:layout_width="337dp"
+                android:layout_height="216dp"
+                android:clickable="true"
+                android:contentDescription="@string/face_satisfied_desc"
+                android:focusable="true"
+                android:src="@drawable/face3" />
+
+            <TextView
+                android:fontFamily="@font/lato_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buena"
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
