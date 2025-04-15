@@ -2,9 +2,14 @@ package com.example.ratingapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
+import android.view.View
 import android.view.WindowManager
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import java.util.Calendar
 import java.util.Date
@@ -20,8 +25,7 @@ class MainActivity : AppCompatActivity() {
         setupFaceClickListeners()
         val btnEstadisticas = findViewById<ImageButton>(R.id.btnEstadisticas)
         btnEstadisticas.setOnClickListener {
-            val intent = Intent(this, StatsActivity::class.java)
-            startActivity(intent)
+            mostrarDialogoDeCodigo()
         }
 
 
@@ -66,6 +70,35 @@ class MainActivity : AppCompatActivity() {
             e.printStackTrace()
         }
     }
+    private fun mostrarDialogoDeCodigo() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Acceso restringido")
+
+        val input = EditText(this)
+        input.inputType = InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_VARIATION_PASSWORD
+        input.hint = "Introduce el código"
+        input.textAlignment = View.TEXT_ALIGNMENT_CENTER
+
+        builder.setView(input)
+
+        builder.setPositiveButton("Entrar") { _, _ ->
+            val codigoIngresado = input.text.toString()
+            if (codigoIngresado == "1234") { // Cambia aquí el código
+                val intent = Intent(this, StatsActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Código incorrecto", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        builder.setNegativeButton("Cancelar") { dialog, _ ->
+            dialog.cancel()
+        }
+
+        val dialog = builder.create()
+        dialog.show()
+    }
+
 
 
 
