@@ -10,14 +10,18 @@ android {
 
     defaultConfig {
         applicationId = "com.example.ratingapp"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    packaging {
+        resources {
+            excludes += "META-INF/LICENSE.md"
+        }
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -43,7 +47,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation(libs.poi)
     implementation(libs.poi.ooxml)
-    implementation(libs.android.mail)
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
     implementation(libs.android.activation)
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.xmlbeans)

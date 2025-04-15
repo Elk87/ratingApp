@@ -3,17 +3,12 @@ package com.example.ratingapp
 import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.work.Constraints
-import androidx.work.ExistingPeriodicWorkPolicy
-import androidx.work.NetworkType
-import androidx.work.PeriodicWorkRequestBuilder
-import androidx.work.WorkManager
 import java.util.Calendar
 import java.util.Date
 import java.util.Locale
-import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,26 +18,22 @@ class MainActivity : AppCompatActivity() {
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         setContentView(R.layout.activity_main)
         setupFaceClickListeners()
-        val constraints = Constraints.Builder()
-            .setRequiredNetworkType(NetworkType.CONNECTED) // Es fundamental que haya red para enviar el email
-            .build()
+        val btnEstadisticas = findViewById<ImageButton>(R.id.btnEstadisticas)
+        btnEstadisticas.setOnClickListener {
+            val intent = Intent(this, StatsActivity::class.java)
+            startActivity(intent)
+        }
 
-        val workRequest = PeriodicWorkRequestBuilder<MonthlyReportWorker>(1, TimeUnit.DAYS)
-            .setConstraints(constraints)
-            .build()
 
-        WorkManager.getInstance(this).enqueueUniquePeriodicWork(
-            "MonthlyReportWorker",
-            ExistingPeriodicWorkPolicy.KEEP,
-            workRequest)
+
     }
 
     // Configura los listeners para las 3 caritas
     private fun setupFaceClickListeners() {
         val feedbackMap = mapOf(
-            R.id.face1 to "unsatisfied",
-            R.id.face2 to "neutral",
-            R.id.face3 to "satisfied"
+            R.id.face1 to "mala",
+            R.id.face2 to "normal",
+            R.id.face3 to "buena"
         )
         feedbackMap.forEach { (id, feedback) ->
             findViewById<ImageView>(id)?.setOnClickListener {

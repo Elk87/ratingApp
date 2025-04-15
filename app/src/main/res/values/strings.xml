@@ -6,13 +6,25 @@
     <string name="face_unsatisfied_desc">Insatisfecho</string>
     <string name="face_neutral_desc">Neutral</string>
     <string name="face_satisfied_desc">Satisfecho</string>
+    <string name="titulo_estadisticas">Estadísticas de satisfacción</string>
+    <string name="desde">DESDE</string>
+    <string name="hasta">HASTA</string>
+    <string name="filtrar">FILTRAR</string>
+    <string name="volver_menu">Volver al menú principal</string>
+    <string name="totales_default">Total respuestas: 0</string>
 
+    <!-- Descripciones de accesibilidad -->
+    <string name="btn_desde_desc">Seleccionar fecha de inicio</string>
+    <string name="btn_hasta_desc">Seleccionar fecha de fin</string>
+    <string name="btn_filtrar_desc">Filtrar respuestas entre fechas</string>
+    <string name="btn_volver_desc">Volver al menú principal</string>
+    <string name="grafico_satisfaccion">Gráfico de satisfacción semanal</string>
     <!-- Para la pantalla de agradecimiento -->
     <string name="thanks_message">¡Gracias por compartir tu experiencia!
 Nos ayuda a seguir mejorando cada día.</string>
     <string name="thanks_icon_desc">Icono de agradecimiento</string>
     <string name="title_activity_thanks">ThanksActivity</string>
-    <string name="title_activity_excel_generator">ExcelGenerator</string>
-    <string name="title_activity_work_manager">WorkManager</string>
-    <string name="title_activity_gmail_sender">GmailSender</string>
+   <string name="title_activity_stats">StatsActivity</string>
+    <string name="stats_main">Estadísticas de satisfacción</string>
+    <string name="descargar">Descargar informe</string>
 </resources>
