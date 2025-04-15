@@ -89,7 +89,7 @@ fun generarInformeExcelEnDescargas(context: Context): File? {
     hojaResumen.setColumnWidth(1, 15 * 256) // Cantidad
     hojaDetalle.setColumnWidth(0, 25 * 256) // Fecha
     hojaDetalle.setColumnWidth(1, 20 * 256) // Respuesta
-    
+
     // === Guardar en la carpeta de Descargas ===
     val directorio = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
     val archivoSalida = File(directorio, "informe_mensual_${año}_${mes}.xlsx")
